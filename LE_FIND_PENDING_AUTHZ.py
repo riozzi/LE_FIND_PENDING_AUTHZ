@@ -95,6 +95,7 @@ def InvalidateAuth(challenge_uri, challenge_token):
 
 MakeACMEJOSEKey()			
 for files in os.listdir(PATH):
+	files = os.path.join(PATH, files)
 	if(FirstFilePass(files)):
 		authz = ExtractAuthz(files)
 		ReviewAuthzViaHTTPS(authz)
